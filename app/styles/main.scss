@@ -1,0 +1,277 @@
+// // Mixins
+@import "components/prefixer";
+@import "components/mixins";
+@import "components/color";
+
+// Variables;
+@import "components/variables";
+
+// Reset
+@import "components/normalize";
+
+// components
+@import "components/global";
+@import "components/icons-material-design";
+@import "components/grid";
+@import "components/navbar";
+@import "components/roboto";
+@import "components/typography";
+@import "components/cards";
+@import "components/toast";
+@import "components/tabs";
+@import "components/tooltip";
+@import "components/buttons";
+@import "components/dropdown";
+@import "components/waves";
+@import "components/modal";
+@import "components/collapsible";
+@import "components/materialbox";
+@import "components/form";
+@import "components/table_of_contents";
+@import "components/sideNav";
+@import "components/preloader";
+@import "components/slider";
+@import "components/date_picker/default.scss";
+@import "components/date_picker/default.date.scss";
+@import "components/date_picker/default.time.scss";
+
+
+
+
+.card-panel {
+  padding: $card-padding;
+  margin: $element-top-margin 0 $element-bottom-margin 0;
+  border-radius: 2px;
+  @extend .z-depth-1;
+  background-color: $card-bg-color;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  margin: $element-top-margin 0 $element-bottom-margin 0;
+  background-color: $card-bg-color;
+  border-radius: 2px;
+  @extend .z-depth-1;
+
+  .card-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    &.activator {
+      cursor: pointer;
+    }
+  }
+
+  // Card Sizes
+  &.small, &.medium, &.large {
+    position: relative;
+
+    .card-image {
+      overflow: hidden;
+    }
+    .card-content {
+      overflow: hidden;
+    }
+    .card-action {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &.small {
+    height: 300px;
+
+    .card-image {
+      height: 150px;
+    }
+    .card-content {
+      height: 150px;
+    }
+
+  }
+
+  &.medium {
+    height: 400px;
+
+    .card-image {
+      height: 250px;
+    }
+    .card-content {
+      height: 150px;
+    }
+  }
+
+  &.large {
+    height: 500px;
+
+    .card-image {
+      height: 330px;
+    }
+    .card-content {
+      height: 170px;
+    }
+  }
+
+
+  .card-image {
+    position: relative;
+
+    // Image background for content
+    img {
+      border-radius: 2px 2px 0 0;
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .card-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: $card-padding;
+    }
+
+  }
+
+  .card-content {
+    padding: $card-padding;
+    border-radius: 0 0 2px 2px;
+
+
+    p {
+      margin: 0;
+      color: inherit;
+    }
+    .card-title {
+      line-height: 48px;
+    }
+  }
+
+  .card-action {
+    border-top: 1px solid rgba(160,160,160,.2);
+    padding: $card-padding;
+
+    a {
+      color: color("orange", "accent-2");
+      margin-right: $card-padding;
+      @include transition(color .3s ease);
+      text-transform: uppercase;
+
+      &:hover { color: lighten(color("orange", "accent-2"), 20%); }
+    }
+  }
+
+  .card-reveal {
+    padding: $card-padding;
+    position: absolute;
+    background-color: #FFF;
+    width: 100%;
+    overflow-y: auto;
+    top: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+
+    .card-title {
+      cursor: pointer;
+      display: block;
+    }
+
+  }
+}
+
+// make full screen elememt
+// html, body {
+//   width: 100%;
+//   height: 100%;
+// }
+
+html {
+  color: #b5b3b3;
+  min-width: 320px;
+  min-height: 736px;
+}
+
+h1 {
+  @media (min-width: 601px) {
+    font-size: 9rem;
+    padding-top: 1rem;
+    margin-top: 2.1rem;
+    margin-bottom: 1.68rem;
+  }
+  color: #ff8686;
+  font-size: 4rem;
+  font-family: 'impact';
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h4 {
+  @media (min-width: 601px) {
+    font-size: 2.28rem;
+    margin-top: 1.14rem;
+  }
+  font-size: .8rem;
+  margin-top: 0;
+}
+
+nav {
+  @media (min-width: 601px) {
+    height: 74px;
+  }
+  height: 54px;
+  background-color: #fcfcfc;
+}
+
+.section {
+  @media (min-width: 601px) {
+    padding-bottom: 1rem;
+  }
+  padding-bottom: 0;
+}
+
+.logo {
+  @media (min-width: 601px) {
+    width: 74px;
+    height: 74px;
+    background-size: 68%;
+  }
+  padding-top: 0; 
+  width: 54px;
+  height: 54px;
+  background: url(/images/logo.png) no-repeat;
+  background-size: 65%;
+  background-position: 10px 10px;
+}
+
+.hero {
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.product-img {
+  @media (min-width: 601px) {
+    width: 450px;
+  }
+  max-width: 100%;
+  width: 180px;
+  height: auto;
+}
+
+.block {
+  @media (min-width: 601px) {
+    padding-top: 12em;
+  }
+  padding-top: 1.5em;
+}
+
+.information {
+  height: 600px;
+}
